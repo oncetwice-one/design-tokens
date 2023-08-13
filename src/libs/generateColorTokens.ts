@@ -4,7 +4,7 @@ import getCurrentDateTime from "../helpers/getCurrentDateTime";
 
 export const generateColorToken = (rawColorTokens: any) => {
   try {
-    const mainPath = path.join("src/tokens");
+    const mainPath = path.join("src/results/tokens");
     if (!fs.existsSync(mainPath)) fs.mkdirSync(mainPath);
 
     const res = [];

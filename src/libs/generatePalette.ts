@@ -36,7 +36,7 @@ export const generatePalette = (rawPalette: any) => {
       res[name.toLowerCase()] = value;
     }
 
-    const mainPath = path.join("src/colors");
+    const mainPath = path.join("src/results/colors");
     if (!fs.existsSync(mainPath)) fs.mkdirSync(mainPath);
 
     // Generate typescript file

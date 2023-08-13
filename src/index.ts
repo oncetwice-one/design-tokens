@@ -1,5 +1,6 @@
 require("dotenv").config();
 import fs from "fs";
+import path from "path";
 import { generateColorToken } from "./libs/generateColorTokens";
 import { generatePalette } from "./libs/generatePalette";
 
@@ -21,6 +22,9 @@ const main = async () => {
       const response = JSON.stringify(data, null, 2);
       fs.writeFileSync(`./src/response.json`, response);
     });
+
+    const resultPath = path.join("src/results");
+    if (!fs.existsSync(resultPath)) fs.mkdirSync(resultPath);
 
     let rawdata = fs.readFileSync("./src/response.json");
     const rawResponse = JSON.parse(rawdata.toString());
