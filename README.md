@@ -35,3 +35,43 @@ For now, if you want to change or add, you must follow the rules. If not, then t
 ![Edit palette title](./src/static/edit_palette_title.png)
 
 3. Then follow "[adding shade to color palette](#adding-shade-to-color-palette)".
+
+## How to edit color tokens
+
+For now, if you want to change or add, you must follow the rules. If not, then the generator will not run properly.
+
+> **Color token can only be edited on the "Ions" page**
+>
+> ![Ions page](./src/static/ions.png)
+
+### Adding color token category
+
+1. Copy paste "Text Color Tokens" frame.
+
+![Copy paste Tokens frame](./src/static/copy_paste_color_token.png)
+
+2. Edit frame title. Make sure you don't delete "Color Tokens" on the title.
+
+![Edit token frame title](./src/static/edit_token_frame_title.png)
+
+3. Then follow "[adding color token variant](#adding-color-token-variant)"
+
+### Adding color token variant
+
+1. Copy paste "\_color-token" component. Make sure the copy is on "Contents" frame.
+
+![copy paste _color-token](./src/static/copy_paste_color_token_component.png)
+
+2. Edit the props.
+
+- Enable "isLink" if the token value is related to existing token or palette
+
+![Edit the props](./src/static/edit_color_token_props_isLink.png)
+
+- Disabled "isLink" if the token value is color value (RGBA, HEX, or HSL)
+
+![Edit the props](./src/static/edit_color_token_props.png)
+
+3. Click rectangle on "\_color-token" component (token-preview). Then edit fill prop.
+
+![Edit token review](./src/static/edit_token_review.png)
