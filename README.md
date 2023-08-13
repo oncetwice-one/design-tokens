@@ -75,3 +75,21 @@ For now, if you want to change or add, you must follow the rules. If not, then t
 3. Click rectangle on "\_color-token" component (token-preview). Then edit fill prop.
 
 ![Edit token review](./src/static/edit_token_review.png)
+
+## Generating tokens
+
+Follow this commands to generate the tokens.
+
+1. First, install the dependencies.
+
+```bash
+yarn install
+```
+
+2. Then, run generate command.
+
+```bash
+yarn run generate
+```
+
+3. See the result on [`./src/results`](./src/results/) folder.
