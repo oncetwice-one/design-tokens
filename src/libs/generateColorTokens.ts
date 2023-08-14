@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import getCurrentDateTime from "../helpers/getCurrentDateTime";
+import generateSCSSString from "../helpers/generateSCSSString";
 
 export const generateColorToken = (rawColorTokens: any) => {
   try {
@@ -17,6 +18,7 @@ export const generateColorToken = (rawColorTokens: any) => {
         const scssVar = [],
           newProps = {},
           rawTsString = [];
+        let scssGroupVars = "";
 
         const sectionContent = rawTokens.children[1];
         const contents = sectionContent.children.find((child) => child.name === "Contents");
@@ -29,9 +31,10 @@ export const generateColorToken = (rawColorTokens: any) => {
           }
 
           const { token, value, isLink } = properties;
+          const variableValue = isLink.value ? "var(--" + value.value + ")" : value.value;
 
-          newProps[token.value] = isLink.value ? "var(" + value.value + ")" : value.value;
-          const variable = `$${token.value}: ${isLink.value ? "var(" + value.value + ")" : value.value};`;
+          newProps[token.value] = variableValue;
+          const variable = `${token.value}: ${variableValue}`;
 
           scssVar.push(variable);
           res.push(properties);
@@ -49,8 +52,18 @@ export const generateColorToken = (rawColorTokens: any) => {
         const tokens = JSON.stringify(newProps, null, 2);
         fs.writeFileSync(`${mainPath}/${fileName}.json`, tokens);
 
-        // Generate SCSS file with single var
-        fs.writeFileSync(`${mainPath}/${fileName}.scss`, scssVar.join("\n"));
+        const generateSCSSFile = () => {
+          const scssGroupKeys = Object.keys(newProps);
+          const scssSingleVars = scssVar.join(";\n$");
+
+          for (const key of scssGroupKeys) {
+            scssGroupVars += `${key}: $${key},\n`;
+          }
+
+          const scssString = generateSCSSString(scssSingleVars, fileName, scssGroupVars);
+          fs.writeFileSync(`${mainPath}/${fileName}.scss`, scssString);
+        };
+        generateSCSSFile();
 
         const currentDate = getCurrentDateTime();
         const markdownContent = `### ${currentDate} (UTC)\nAuto generate on ${currentDate} (UTC).`;
