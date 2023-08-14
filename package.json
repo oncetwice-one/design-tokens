@@ -4,13 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "generate": "npx ts-node ./src/index.ts"
+    "format": "npx prettier --log-level warn --write \"./src/results/**/*\"",
+    "generate": "npx ts-node ./src/index.ts && yarn run format"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
-    "@types/node": "^20.4.10"
+    "@types/node": "^20.4.10",
+    "prettier": "^3.0.1"
   }
 }
