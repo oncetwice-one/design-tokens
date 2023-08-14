@@ -1,4 +1,4 @@
-const PREFIX = "ot-clr";
+const PREFIX = "ot-color";
 export function generateSCSSVariables(jsonData: any) {
   let scss = "";
 
@@ -17,7 +17,7 @@ export function generateGroupSCSSVariables(jsonData: any) {
   let scss = "";
 
   for (const category in jsonData) {
-    scss += `$color-${category}: (\n`;
+    scss += `$${PREFIX}-${category}: (\n`;
     const colors = jsonData[category];
 
     for (const shade in colors) {
