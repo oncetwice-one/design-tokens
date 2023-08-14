@@ -14,8 +14,8 @@ export const neutral = {
   "850": "rgba(62, 69, 76, 1)",
   "900": "rgba(48, 54, 60, 1)",
   "950": "rgba(34, 38, 42, 1)",
-  "1000": "rgba(28, 32, 35, 1)"
-} as const
+  "1000": "rgba(28, 32, 35, 1)",
+} as const;
 
 export const primary = {
   "50": "rgba(237, 243, 255, 1)",
@@ -28,8 +28,8 @@ export const primary = {
   "700": "rgba(47, 54, 211, 1)",
   "800": "rgba(41, 49, 170, 1)",
   "900": "rgba(41, 50, 134, 1)",
-  "950": "rgba(24, 27, 78, 1)"
-} as const
+  "950": "rgba(24, 27, 78, 1)",
+} as const;
 
 export const green = {
   "50": "rgba(239, 254, 241, 1)",
@@ -42,8 +42,8 @@ export const green = {
   "700": "rgba(13, 136, 38, 1)",
   "800": "rgba(16, 107, 35, 1)",
   "900": "rgba(15, 88, 32, 1)",
-  "950": "rgba(2, 49, 13, 1)"
-} as const
+  "950": "rgba(2, 49, 13, 1)",
+} as const;
 
 export const orange = {
   "50": "rgba(255, 249, 241, 1)",
@@ -56,8 +56,8 @@ export const orange = {
   "700": "rgba(200, 114, 0, 1)",
   "800": "rgba(144, 82, 0, 1)",
   "900": "rgba(88, 50, 0, 1)",
-  "950": "rgba(60, 34, 0, 1)"
-} as const
+  "950": "rgba(60, 34, 0, 1)",
+} as const;
 
 export const red = {
   "50": "rgba(255, 241, 241, 1)",
@@ -70,5 +70,5 @@ export const red = {
   "700": "rgba(195, 18, 18, 1)",
   "800": "rgba(161, 19, 19, 1)",
   "900": "rgba(133, 23, 23, 1)",
-  "950": "rgba(73, 6, 6, 1)"
-} as const
+  "950": "rgba(73, 6, 6, 1)",
+} as const;

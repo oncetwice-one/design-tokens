@@ -22,5 +22,5 @@ export const background = {
   "ot-background-success-base": "var(ot-color-green-400)",
   "ot-background-success-hovered": "var(ot-color-green-300)",
   "ot-background-success-actived": "var(ot-color-green-200)",
-  "ot-background-success-disabled": "var(ot-color-green-500)"
-} as const
+  "ot-background-success-disabled": "var(ot-color-green-500)",
+} as const;
