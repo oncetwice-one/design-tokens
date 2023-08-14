@@ -10,6 +10,8 @@ const FIGMA_API_KEY = process.env.FIGMA_API_KEY;
 
 const main = async () => {
   try {
+    console.log("Fetching figma file");
+
     await fetch(FETCH_URL, {
       method: "GET",
       headers: {
@@ -21,6 +23,8 @@ const main = async () => {
 
       const response = JSON.stringify(data, null, 2);
       fs.writeFileSync(`./src/response.json`, response);
+
+      console.log("Success fetching figma file");
     });
 
     const resultPath = path.join("src/results");
